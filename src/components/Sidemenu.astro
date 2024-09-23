@@ -7,16 +7,4 @@ const playlists = [
   { name: "Música pa cocinar", cover: "/cooking.jpg", songs: ["song13", "song14", "song15"] },
 ]
 ---
-<ul>
-  {playlists.map((playlist) => (
-    <li>
-      <img src={playlist.cover} alt={playlist.name} />
-      <h2>{playlist.name}</h2>
-      <ul>
-        {playlist.songs.map((song) => (
-          <li>{song}</li>
-        ))}
-      </ul>
-    </li>
-  ))}
-</ul>
+

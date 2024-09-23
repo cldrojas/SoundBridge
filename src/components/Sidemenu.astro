@@ -1,0 +1,22 @@
+---
+const playlists = [
+  { name: "Música pa hacer aseo", cover: "/cleaning.jpg", songs: ["song1", "song2", "song3"] },
+  { name: "Música pa planchar", cover: "/ironing.jpg", songs: ["song4", "song5", "song6"] },
+  { name: "Música pa estudiar", cover: "/studying.jpg", songs: ["song7", "song8", "song9"] },
+  { name: "Música pa correr", cover: "/running.jpg", songs: ["song10", "song11", "song12"] },
+  { name: "Música pa cocinar", cover: "/cooking.jpg", songs: ["song13", "song14", "song15"] },
+]
+---
+<ul>
+  {playlists.map((playlist) => (
+    <li>
+      <img src={playlist.cover} alt={playlist.name} />
+      <h2>{playlist.name}</h2>
+      <ul>
+        {playlist.songs.map((song) => (
+          <li>{song}</li>
+        ))}
+      </ul>
+    </li>
+  ))}
+</ul>

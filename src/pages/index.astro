@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro'
 
   <input type="checkbox" class="inline-flex items-center text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none   dark:text-gray-400 dark:hover:bg-gray-700 dark:ring-gray-600 dark:focus:outline-none peer h-0">
 
-  <aside class="absolute top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 peer-checked:translate-x-0" aria-label="Sidebar">
+  <aside class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 peer-checked:translate-x-0" aria-label="Sidebar">
     <div class="h-full px-3 py-4 pt-10 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <span id="close" class="flex  justify-end mb-2">
         <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -185,7 +185,7 @@ import Layout from '../layouts/Layout.astro'
     position: fixed;
     top: 0;
     left:0;
-    border: solid 1px green;
+    backdrop-filter: blur(10px);
     width: 100%;
     height: 100vh;
     overflow: hidden;

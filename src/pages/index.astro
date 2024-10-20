@@ -182,25 +182,27 @@ import Layout from '../layouts/Layout.astro'
   }
   input[type="checkbox"]:checked::after {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     border: solid 1px green;
     width: 100%;
     height: 100vh;
-    overflow-y:hidden;
-    
-    body{
-      background-color: blue;
+    overflow-y: hidden;
+
+    body {
+      height: 100vh;
+      overflow: hidden;
     }
-    /* background: #21b799; */
   }
+  /* background: #21b799; */
+}
 </style>
 
 <script>
-  const closeBtn = document.getElementById('close') as HTMLSpanElement;
-  const checkbox = document.querySelector('input') as HTMLInputElement
-  const lis = document.querySelectorAll('li')
-  closeBtn.addEventListener('click', () => checkbox.checked = false);
-  lis.forEach(li => li.addEventListener('click', () => checkbox.checked = false))
+const closeBtn = document.getElementById('close') as HTMLSpanElement;
+const checkbox = document.querySelector('input') as HTMLInputElement
+const lis = document.querySelectorAll('li')
+closeBtn.addEventListener('click', () => checkbox.checked = false);
+lis.forEach(li => li.addEventListener('click', () => checkbox.checked = false))
 </script>

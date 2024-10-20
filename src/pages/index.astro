@@ -182,7 +182,7 @@ import Layout from '../layouts/Layout.astro'
   }
   input[type="checkbox"]:checked::after {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left:0;
     border: solid 1px green;
@@ -191,7 +191,7 @@ import Layout from '../layouts/Layout.astro'
     overflow-y:hidden;
     
     body{
-      position: fixed;
+      position: absolute;
       height: 100vh;
       overflow: hidden;
     }

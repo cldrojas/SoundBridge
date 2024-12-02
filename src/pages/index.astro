@@ -13,6 +13,7 @@ import Player from '@components/Player.astro'
 
   <Aside />
   <Main />
+  <Player />
 </Layout>
 
 <style>
@@ -45,7 +46,5 @@ import Player from '@components/Player.astro'
   const checkbox = document.querySelector('input') as HTMLInputElement
   const lis = document.querySelectorAll('li')
   closeBtn.addEventListener('click', () => (checkbox.checked = false))
-  lis.forEach((li) =>
-    li.addEventListener('click', () => (checkbox.checked = false))
-  )
+  lis.forEach((li) => li.addEventListener('click', () => (checkbox.checked = false)))
 </script>

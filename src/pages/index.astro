@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro'
 import Aside from '@components/Aside.astro'
 import Main from '@components/Main.astro'
-import Player from '@components/Player.astro'
+import { Player } from '@components/Player'
 ---
 
 <Layout title="SoundBridge">
@@ -13,7 +13,7 @@ import Player from '@components/Player.astro'
 
   <Aside />
   <Main />
-  <Player />
+  <Player client:load />
 </Layout>
 
 <style>

@@ -145,6 +145,44 @@ const Muted = () => (
     <path d="M16 10l4 4m0 -4l-4 4"></path>
   </svg>
 )
+const Playlist = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+    width="44"
+    height="44"
+    viewBox="0 0 24 24"
+    stroke-width="2.5"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M14 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    <path d="M17 17v-13h4" />
+    <path d="M13 5h-10" />
+    <path d="M3 9l10 0" />
+    <path d="M9 13h-6" />
+  </svg>
+)
+const Queue = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+    <path d="M4 14m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+  </svg>
+)
 export {
   Play,
   Pause,
@@ -155,5 +193,7 @@ export {
   Shuffle,
   VolumeUp,
   VolumeDown,
-  Muted
+  Muted,
+  Playlist,
+  Queue
 }

@@ -1,0 +1,39 @@
+<svg version="1.0" height="640" width="640" viewBox="0 0 640 640">
+        <g id="diadema" fill="white">
+          <rect x="35" y="360" width="30" height="90" rx="10"></rect>
+          <rect x="60" y="304" width="76" height="206" rx="20"></rect>
+
+          <path
+            class="diadema"
+            d=" M 320,50
+                C 90,50 80,250 90,316
+                v 124
+                h 40
+                C 80,110 190,90 320,80
+                C 485,95 510,140 508,370
+                h 30
+                V 320
+                C 550,30 360,50 300,50
+                Z"
+          ></path>
+
+          <rect x="495" y="304" width="76" height="206" rx="20"></rect>
+          <rect x="565" y="360" width="30" height="90" rx="10"></rect>
+        </g>
+
+        <g fill="lightgrey">
+          <rect x="160" y="360" width="10" height="90" rx="5"></rect>
+          <rect x="190" y="320" width="10" height="150" rx="5"></rect>
+          <rect x="220" y="300" width="10" height="180" rx="5"></rect>
+          <rect x="250" y="250" width="10" height="250" rx="5"></rect>
+          <rect x="280" y="220" width="10" height="300" rx="5"></rect>
+        </g>
+        <g fill="rgb(59 90 246)">
+          <rect x="310" y="250" width="10" height="250" rx="5"></rect>
+          <rect x="340" y="320" width="10" height="150" rx="5"></rect>
+          <rect x="370" y="300" width="10" height="180" rx="5"></rect>
+          <rect x="430" y="340" width="10" height="120" rx="5"></rect>
+          <rect x="400" y="320" width="10" height="150" rx="5"></rect>
+          <rect x="460" y="360" width="10" height="90" rx="5"></rect>
+        </g>
+      </svg>

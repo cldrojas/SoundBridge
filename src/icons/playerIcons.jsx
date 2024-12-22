@@ -51,11 +51,11 @@ const Repeat = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     width="24"
     height="24"
-    stroke-width="2"
+    strokeWidth="2"
   >
     <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3"></path>
     <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3"></path>
@@ -67,11 +67,11 @@ const RepeatOne = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     width="24"
     height="24"
-    stroke-width="2"
+    strokeWidth="2"
   >
     <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3"></path>
     <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3"></path>
@@ -84,11 +84,11 @@ const Shuffle = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     width="24"
     height="24"
-    stroke-width="2"
+    strokeWidth="2"
   >
     <path d="M18 4l3 3l-3 3"></path>
     <path d="M18 20l3 -3l-3 -3"></path>
@@ -102,11 +102,11 @@ const VolumeUp = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     width="20"
     height="20"
-    stroke-width="2"
+    strokeWidth="2"
   >
     <path d="M15 8a5 5 0 0 1 0 8"></path>
     <path d="M17.7 5a9 9 0 0 1 0 14"></path>
@@ -119,11 +119,11 @@ const VolumeDown = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     width="24"
     height="24"
-    stroke-width="2"
+    strokeWidth="2"
   >
     <path d="M15 8a5 5 0 0 1 0 8"></path>
     <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"></path>
@@ -135,11 +135,11 @@ const Muted = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     width="24"
     height="24"
-    stroke-width="2"
+    strokeWidth="2"
   >
     <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"></path>
     <path d="M16 10l4 4m0 -4l-4 4"></path>
@@ -148,15 +148,15 @@ const Muted = () => (
 const Playlist = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+    className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
     width="44"
     height="44"
     viewBox="0 0 24 24"
-    stroke-width="2.5"
+    strokeWidth="2.5"
     stroke="currentColor"
     fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
     <path d="M14 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
@@ -172,11 +172,11 @@ const Queue = () => (
     width="20"
     height="20"
     viewBox="0 0 24 24"
-    stroke-width="2"
+    strokeWidth="2"
     stroke="currentColor"
     fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>

@@ -27,13 +27,13 @@ const timeToMs = (time) => {
 const repatingOptions = {
   none: <Repeat />,
   all: (
-    <div class="text-teal-600">
+    <div className="text-teal-600">
       <Repeat />
     </div>
   ),
   one: (
     <>
-      <div class="text-teal-600">
+      <div className="text-teal-600">
         <RepeatOne />
       </div>
     </>
@@ -41,34 +41,55 @@ const repatingOptions = {
 }
 
 export const Player = () => {
-  const soundRef = useRef()
+  const soundRef = useRef(undefined)
 
-  const [currentSong, setCurrentSong] = useState(null)
+  const [songs, setSongs] = useState()
+  const [currentSong, setCurrentSong] = useState(undefined)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isShuffling, setIsShuffling] = useState(false)
   const [repeating, setRepeating] = useState('none')
   const [currentTime, setCurrentTime] = useState(0)
-  const [currentSongIndex, setCurrentSongIndex] = useState(0)
-  const [songs, setSongs] = useState()
   const [currentPlaylist, setCurrentPlaylist] = useState([])
 
   useEffect(() => {
-    soundRef.current.ontimeupdate = () => setCurrentTime(timeToMinutes())
-  })
+    fetch('/api/songs')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(`songs`, data)
+        setSongs(data)
+      })
+    songs && !currentSong && setCurrentSong(songs[0])
+  }, [])
+
+  useEffect(() => {
+    if (soundRef)
+      soundRef.current.ontimeupdate = () => setCurrentTime(soundRef.current.currentTime)
+  }, [soundRef.current?.currentTime])
+
+  useEffect(() => {
+    if (currentSong) {
+      soundRef.current.src = `/music/${currentSong.title}.mp3`
+      console.log(`selected song:`, currentSong.title)
+    } else {
+      console.log(`no song selected`)
+    }
+  }, [currentSong])
 
   const handlePlay = () => {
-    if (isPlaying) {
-      soundRef.current.pause()
-      setCurrentTime(timeToMinutes(soundRef.current.currentTime))
-    } else if (currentTime > 0) {
-      soundRef.current.currentTime = timeToMs(currentTime)
-      soundRef.current.play()
-    } else {
-      soundRef.current.src = `/music/${songs[currentSongIndex + 1]}`
-      soundRef.current.volume = 0.2
-      soundRef.current.play()
+    if (currentSong && soundRef.current.readyState === 4) {
+      console.log(`DEBUG:try to play/pause:`, `${currentSong.title}.mp3`)
+      if (isPlaying) {
+        soundRef.current.pause()
+        setCurrentTime(soundRef.current.currentTime)
+      } else if (currentTime > 0) {
+        soundRef.current.currentTime = currentTime
+        soundRef.current.play()
+      } else {
+        soundRef.current.volume = 0.2
+        soundRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
     }
-    setIsPlaying(!isPlaying)
   }
 
   const toggleRepeat = () => {
@@ -83,6 +104,15 @@ export const Player = () => {
       }
       return 'none'
     })
+  }
+
+  const onNext = () => {
+    console.log(`click next`)
+    if (isShuffling) {
+      setCurrentSong(Math.floor(Math.random() * songs.length))
+    } else {
+      setCurrentSong(songs[currentSong.id])
+    }
   }
 
   return (
@@ -109,7 +139,7 @@ export const Player = () => {
           >
             {isPlaying ? <Pause /> : <Play />}
           </button>
-          <button>
+          <button onClick={() => onNext()}>
             <Next />
           </button>
           <button onClick={() => toggleRepeat()}>
@@ -117,7 +147,7 @@ export const Player = () => {
           </button>
         </div>
         <div className="flex justify-between gap-2">
-          <span>{currentTime}</span>
+          <span>{timeToMinutes(currentTime)}</span>
           <input
             type="range"
             value={soundRef.current?.currentTime}
@@ -131,15 +161,15 @@ export const Player = () => {
         </div>
       </main>
       <aside className="mr-10 flex gap-1 items-center">
-        <button class="text-white">
+        <button className="text-white">
           <Queue />
         </button>
-        <button class="text-white">
+        <button className="text-white">
           <Playlist />
         </button>
-        <span class="flex">
+        <span className="flex">
           <VolumeUp />
-          <input type="range" value={soundRef.current?.volume} class="ms-1" />
+          <input type="range" value={soundRef.current?.volume} className="ms-1" />
         </span>
       </aside>
     </section>

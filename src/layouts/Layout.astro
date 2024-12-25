@@ -1,35 +1,37 @@
 ---
-import Sidemenu from '../components/Sidemenu.astro';
-
+import { Player } from '@components/Player'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
 interface Props {
-title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Astro description" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{title}</title>
-</head>
-<body>
-  <slot />
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <ViewTransitions />
+  <body>
+    <slot />
+    <Player client:load transition:persist />
+  </body>
 
-<style is:global>
-html {
-font-family: system-ui, sans-serif;
-background-color: #121211;
-color: #fafafa
-}
-body {
-  height: 100dvh;
-}
-</style>
+  <style is:global>
+    html {
+      font-family: system-ui, sans-serif;
+      background-color: #121211;
+      color: #fafafa;
+    }
+    body {
+      height: 100dvh;
+    }
+  </style>
+</html>
